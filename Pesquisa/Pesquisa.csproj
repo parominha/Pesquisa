@@ -47,16 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dao\cliente\Cliente.cs" />
-    <Compile Include="Cliente.cs">
+    <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <Compile Include="FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

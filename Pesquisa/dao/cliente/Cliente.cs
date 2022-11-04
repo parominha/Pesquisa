@@ -32,12 +32,55 @@ namespace Pesquisa.dao.cliente
             return DataSetCliente;
         }
 
-        public void IncluirCliente(string p_Name, string p_Contact, string p_Address, int p_Credit)
+        public void Incluir(string p_Name, string p_Contact, string p_Address, int p_Credit)
         {
             try
             {
                 SqlConnection Conexao = new SqlConnection(oChave);
                 Conexao.Open();
+                SqlCommand cmd = new SqlCommand($"INSERT INTO Customer_List (Name, Contact, Address, credit)" +
+                                                $"VALUES('{p_Name}'," +
+                                                $"'{p_Contact}'," +
+                                                $"'{p_Address}'," +
+                                                $"'{p_Credit}')", Conexao);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void Alterar (string p_Name, string p_Contact, string p_Address, int p_Credit, int p_CusId)
+        {
+            try
+            {
+                SqlConnection Conexao = new SqlConnection(oChave);
+                Conexao.Open();
+                SqlCommand cmd = new SqlCommand($"UPDATE Customer_List SET" +
+                                                $"Name = '{p_Name}'," +
+                                                $"Contact = '{p_Contact}'," +
+                                                $"Address = '{p_Address}," +
+                                                $"credit = '{p_Credit}'" +
+                                                $"WHERE CusId = {p_CusId}",Conexao);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void Apagar(int p_CusId)
+        {
+            try
+            {
+                SqlConnection Conexao = new SqlConnection(oChave);
+                Conexao.Open();
+                SqlCommand cmd = new SqlCommand($"delete from Customer_List WHERE CusId {p_CusId}", Conexao);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
