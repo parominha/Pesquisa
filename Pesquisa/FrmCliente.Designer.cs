@@ -47,6 +47,7 @@ namespace Pesquisa
             this.butIncluir = new System.Windows.Forms.Button();
             this.butAlterar = new System.Windows.Forms.Button();
             this.butExcluir = new System.Windows.Forms.Button();
+            this.butNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).BeginInit();
             this.grBoxDados.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,7 @@ namespace Pesquisa
             this.dgCliente.ReadOnly = true;
             this.dgCliente.Size = new System.Drawing.Size(627, 321);
             this.dgCliente.TabIndex = 3;
+            this.dgCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCliente_CellDoubleClick);
             // 
             // grBoxDados
             // 
@@ -191,21 +193,23 @@ namespace Pesquisa
             // 
             this.tBoxId.Location = new System.Drawing.Point(125, 152);
             this.tBoxId.Name = "tBoxId";
+            this.tBoxId.ReadOnly = true;
             this.tBoxId.Size = new System.Drawing.Size(97, 20);
             this.tBoxId.TabIndex = 9;
             // 
             // butIncluir
             // 
-            this.butIncluir.Location = new System.Drawing.Point(181, 194);
+            this.butIncluir.Location = new System.Drawing.Point(213, 194);
             this.butIncluir.Name = "butIncluir";
             this.butIncluir.Size = new System.Drawing.Size(75, 23);
             this.butIncluir.TabIndex = 10;
             this.butIncluir.Text = "Incluir";
             this.butIncluir.UseVisualStyleBackColor = true;
+            this.butIncluir.Click += new System.EventHandler(this.butIncluir_Click);
             // 
             // butAlterar
             // 
-            this.butAlterar.Location = new System.Drawing.Point(278, 194);
+            this.butAlterar.Location = new System.Drawing.Point(294, 194);
             this.butAlterar.Name = "butAlterar";
             this.butAlterar.Size = new System.Drawing.Size(75, 23);
             this.butAlterar.TabIndex = 11;
@@ -221,11 +225,22 @@ namespace Pesquisa
             this.butExcluir.Text = "Excluir";
             this.butExcluir.UseVisualStyleBackColor = true;
             // 
+            // butNovo
+            // 
+            this.butNovo.Location = new System.Drawing.Point(665, 353);
+            this.butNovo.Name = "butNovo";
+            this.butNovo.Size = new System.Drawing.Size(75, 23);
+            this.butNovo.TabIndex = 5;
+            this.butNovo.Text = "Novo";
+            this.butNovo.UseVisualStyleBackColor = true;
+            this.butNovo.Click += new System.EventHandler(this.butNovo_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 406);
+            this.Controls.Add(this.butNovo);
             this.Controls.Add(this.grBoxDados);
             this.Controls.Add(this.dgCliente);
             this.Controls.Add(this.butPesquisa);
@@ -261,6 +276,7 @@ namespace Pesquisa
         private System.Windows.Forms.TextBox tBoxEndereco;
         private System.Windows.Forms.TextBox tBoxContato;
         private System.Windows.Forms.TextBox tBoxNome;
+        private System.Windows.Forms.Button butNovo;
     }
 }
 
